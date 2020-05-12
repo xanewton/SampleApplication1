@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun launchAdMobMediationTestSuite() {
-        MediationTestSuite.launch(applicationContext)
+        // Context parameter should be the current activity
+        MediationTestSuite.launch(this)
     }
 }
