@@ -5,6 +5,7 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.google.android.ads.mediationtestsuite.MediationTestSuite
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -33,7 +34,15 @@ class MainActivity : AppCompatActivity() {
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
             R.id.action_settings -> true
+            R.id.action_test -> {
+                launchAdMobMediationTestSuite()
+                return true
+            }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    fun launchAdMobMediationTestSuite() {
+        MediationTestSuite.launch(applicationContext)
     }
 }
